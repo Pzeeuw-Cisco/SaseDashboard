@@ -9,13 +9,13 @@
 # ================================= #
 
 base_url = "https://api.thousandeyes.com/v6" # define API base URL and API version
-oauth_bearer_token = "" # Insert OAuth Bearer Token
+oauth_bearer_token = "eefaa91b-bf0d-422a-a23c-e658b699ccc8" # Insert OAuth Bearer Token
 
 ### 2 Options: py_connector will ADD tests based on this input from your ThousandEyes dashboard:
 # 0 = add ALL test types as stated in test_types 
 # 1 = add ALL test types as stated in test_types AND which are TAGGED with the stated label_name
 # Create your test label at https://app.thousandeyes.com/settings/tests/?tab=labels
-enable_label_specific = 1 #change to 1 or 0
+enable_label_specific = 0 #change to 1 or 0
 label_name = "grafana" #case sensitive!
 
 
@@ -54,4 +54,4 @@ interval = 60
 influx_token = "sensordata_token123"
 influx_org = "sensordata_organization"
 influx_bucket = "sensordata_bucket"
-influx_url = "http://influxdb:8086" #docker http://influxdb:8086
+influx_url = "http://localhost:8086" #docker http://influxdb:8086
