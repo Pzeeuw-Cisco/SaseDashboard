@@ -186,9 +186,9 @@ def _parse_and_convert_http_server(resp,testId,testName):
                         "agentName": te_test_data["agentName"]
                     },
                 "fields": {
-                        "errorType": te_test_data["errorType"],
-                        "numRedirects": te_test_data["numRedirects"],
-                        "responseCode": te_test_data["responseCode"]
+                        #"errorType": te_test_data["errorType"],
+                        #"numRedirects": te_test_data["numRedirects"],
+                        #"responseCode": te_test_data["responseCode"]
                     },
                 "time": round(te_event_time)
                 }
@@ -196,8 +196,8 @@ def _parse_and_convert_http_server(resp,testId,testName):
             # just to be sure, adding for now IFs to surely add all data
             # Depending on the errorType, TE is not sending all keys
 
-            if "serverIp" in te_test_data:
-                one_dataset["tags"]["serverIp"] = te_test_data["serverIp"]
+            #if "serverIp" in te_test_data:
+                #one_dataset["tags"]["serverIp"] = te_test_data["serverIp"]
 
             if "throughput" in te_test_data:
                 one_dataset["fields"]["throughput"] = te_test_data["throughput"]
@@ -205,14 +205,14 @@ def _parse_and_convert_http_server(resp,testId,testName):
             if "receiveTime" in te_test_data:
                 one_dataset["fields"]["receiveTime"] = te_test_data["receiveTime"]
 
-            if "connectTime" in te_test_data:
-                one_dataset["fields"]["connectTime"] = te_test_data["connectTime"]
+            #if "connectTime" in te_test_data:
+                #one_dataset["fields"]["connectTime"] = te_test_data["connectTime"]
 
-            if "sslTime" in te_test_data:
+            #if "sslTime" in te_test_data:
                 one_dataset["fields"]["sslTime"] = te_test_data["sslTime"]
 
-            if "dnsTime" in te_test_data:
-                one_dataset["fields"]["dnsTime"] = te_test_data["dnsTime"]
+            #if "dnsTime" in te_test_data:
+                #one_dataset["fields"]["dnsTime"] = te_test_data["dnsTime"]
 
             if "responseTime" in te_test_data:
                 one_dataset["fields"]["responseTime"] = te_test_data["responseTime"]
@@ -220,14 +220,14 @@ def _parse_and_convert_http_server(resp,testId,testName):
             if "totalTime" in te_test_data:
                 one_dataset["fields"]["totalTime"] = te_test_data["totalTime"]
             
-            if "waitTime" in te_test_data:
-                one_dataset["fields"]["waitTime"] = te_test_data["waitTime"]
+            #if "waitTime" in te_test_data:
+                #one_dataset["fields"]["waitTime"] = te_test_data["waitTime"]
 
-            if "wireSize" in te_test_data:
-                one_dataset["fields"]["wireSize"] = te_test_data["wireSize"]
+            #if "wireSize" in te_test_data:
+                #one_dataset["fields"]["wireSize"] = te_test_data["wireSize"]
 
-            if "sslVersion" in te_test_data:
-                one_dataset["tags"]["sslVersion"] = te_test_data["sslVersion"]
+            #if "sslVersion" in te_test_data:
+                #one_dataset["tags"]["sslVersion"] = te_test_data["sslVersion"]
 
             # adding this cause: if number of redirects is 0, there is no key redirectTime
             if int(te_test_data["numRedirects"]) > 0:
@@ -274,8 +274,8 @@ def _parse_and_convert_page_load(resp,testId,testName):
 
             # Depending on the errror, TE is not sending all keys
 
-            if "numErrors" in te_test_data:
-                one_dataset["fields"]["numErrors"] = te_test_data["numErrors"]
+            #if "numErrors" in te_test_data:
+                #one_dataset["fields"]["numErrors"] = te_test_data["numErrors"]
 
             if "numObjects" in te_test_data:
                 one_dataset["fields"]["numObjects"] = te_test_data["numObjects"]
